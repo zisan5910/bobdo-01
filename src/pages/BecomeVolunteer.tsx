@@ -10,58 +10,60 @@ const BecomeVolunteer = () => {
 
   return (
     <Layout title="স্বেচ্ছাসেবক হোন">
-      <div className="px-4 space-y-6">
+      <div className="px-4 space-y-6 lg:max-w-6xl lg:mx-auto">
         {/* Registration Button */}
         <Card className="border-success/20 bg-gradient-to-br from-green-50 to-green-100">
-          <CardContent className="p-6 text-center">
-            <Users2 className="h-12 w-12 text-success mx-auto mb-4" />
-            <h3 className="text-lg font-semibold font-bengali mb-4">
+          <CardContent className="p-6 text-center lg:p-8">
+            <Users2 className="h-12 w-12 text-success mx-auto mb-4 lg:h-16 lg:w-16 lg:mb-6" />
+            <h3 className="text-lg font-semibold font-bengali mb-4 lg:text-3xl lg:mb-6">
               মানবসেবায় যোগ দিন
             </h3>
             <Button
               onClick={openRegistration}
-              className="w-full btn-ripple bg-success hover:bg-success/90 text-success-foreground text-lg py-4"
+              className="w-full btn-ripple bg-success hover:bg-success/90 text-success-foreground text-lg py-4 lg:w-auto lg:px-8 lg:py-3 lg:text-xl"
             >
               নিবন্ধন করুন
             </Button>
           </CardContent>
         </Card>
 
-        {/* Qualifications */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 font-bengali">
-              <GraduationCap className="h-5 w-5 text-primary" />
-              প্রয়োজনীয় যোগ্যতা
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <div className="flex items-start gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-              <p className="font-bengali">বয়স ১৮ বছরের ঊর্ধ্বে</p>
-            </div>
-            <div className="flex items-start gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-              <p className="font-bengali">মানবসেবার জন্য আগ্রহী</p>
-            </div>
-            <div className="flex items-start gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-              <p className="font-bengali">কমিউনিকেশন স্কিল</p>
-            </div>
-            <div className="flex items-start gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-              <p className="font-bengali">নিয়মিত সময় দিতে পারবেন</p>
-            </div>
-            <div className="flex items-start gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-              <p className="font-bengali">টিমওয়ার্কে পারদর্শী</p>
-            </div>
-            <div className="flex items-start gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-              <p className="font-bengali">ইতিবাচক মনোভাব</p>
-            </div>
-          </CardContent>
-        </Card>
+        {/* Information Cards Grid */}
+        <div className="space-y-6 lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0">
+          {/* Qualifications */}
+          <Card className="lg:hover:shadow-lg lg:transition-shadow">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 font-bengali lg:text-xl">
+                <GraduationCap className="h-5 w-5 text-primary lg:h-6 lg:w-6" />
+                প্রয়োজনীয় যোগ্যতা
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 lg:space-y-4">
+              <div className="flex items-start gap-2">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                <p className="font-bengali lg:text-base">বয়স ১৮ বছরের ঊর্ধ্বে</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                <p className="font-bengali lg:text-base">মানবসেবার জন্য আগ্রহী</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                <p className="font-bengali lg:text-base">কমিউনিকেশন স্কিল</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                <p className="font-bengali lg:text-base">নিয়মিত সময় দিতে পারবেন</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                <p className="font-bengali lg:text-base">টিমওয়ার্কে পারদর্শী</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                <p className="font-bengali lg:text-base">ইতিবাচক মনোভাব</p>
+              </div>
+            </CardContent>
+          </Card>
 
         <Card>
       <CardHeader>

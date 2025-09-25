@@ -11,17 +11,17 @@ const BecomeDonor = () => {
 
   return (
     <Layout title="রক্তদাতা হোন">
-      <div className="px-4 space-y-6">
+      <div className="px-4 space-y-6 lg:max-w-6xl lg:mx-auto">
         {/* Registration Button */}
         <Card className="border-primary/20 bg-gradient-to-br from-red-50 to-red-100">
-          <CardContent className="p-6 text-center">
-            <UserPlus className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h3 className="text-lg font-semibold font-bengali mb-4">
+          <CardContent className="p-6 text-center lg:p-8">
+            <UserPlus className="h-12 w-12 text-primary mx-auto mb-4 lg:h-16 lg:w-16 lg:mb-6" />
+            <h3 className="text-lg font-semibold font-bengali mb-4 lg:text-3xl lg:mb-6">
               আজই রক্তদাতা হিসেবে নিবন্ধন করুন
             </h3>
             <Button
               onClick={openRegistration}
-              className="w-full btn-ripple bg-primary hover:bg-primary-hover text-primary-foreground text-lg py-4"
+              className="w-full btn-ripple bg-primary hover:bg-primary-hover text-primary-foreground text-lg py-4 lg:w-auto lg:px-8 lg:py-3 lg:text-xl"
             >
               নিবন্ধন করুন
             </Button>
@@ -29,7 +29,7 @@ const BecomeDonor = () => {
         </Card>
 
         {/* Information Cards */}
-        <Accordion type="single" collapsible className="space-y-4">
+        <Accordion type="single" collapsible className="space-y-4 lg:grid lg:grid-cols-2 lg:gap-6">
           <AccordionItem value="requirements">
             <Card>
               <CardHeader>

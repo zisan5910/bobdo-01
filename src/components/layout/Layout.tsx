@@ -17,22 +17,24 @@ const Layout = ({ children, showNavBars = true, title }: LayoutProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col max-w-md mx-auto">
+    <div className="min-h-screen bg-background flex flex-col max-w-md mx-auto lg:max-w-6xl">
       {showNavBars && (
         <TopNavBar 
           onNotificationClick={handleNotificationClick}
         />
       )}
       
-      <main className={`flex-1 ${showNavBars ? "pb-20 pt-4" : ""}`}>
+      <main className={`flex-1 ${showNavBars ? "pb-20 pt-4 lg:pb-4 lg:pt-8" : ""}`}>
         {title && (
-          <div className="px-4 pb-4">
-            <h1 className="text-2xl font-bold text-foreground font-bengali text-center">
+          <div className="px-4 pb-4 lg:px-8 lg:pb-8">
+            <h1 className="text-2xl font-bold text-foreground font-bengali text-center lg:text-4xl lg:text-left">
               {title}
             </h1>
           </div>
         )}
-        {children}
+        <div className="lg:px-8">
+          {children}
+        </div>
       </main>
       
       {showNavBars && <BottomNavBar />}

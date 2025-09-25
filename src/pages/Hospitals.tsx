@@ -82,75 +82,78 @@ const Hospitals = () => {
 
   return (
     <Layout title="বগুড়া শহরের হাসপাতাল">
-      <div className="px-4 space-y-4">
+      <div className="px-4 space-y-4 lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0">
+        <div className="lg:col-span-2">
+          <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6 lg:p-6">
+            <p className="text-red-800 font-bengali text-center font-semibold lg:text-lg">
+              ⚠️ জরুরি পরিস্থিতিতে
+            </p>
+            <p className="text-red-700 font-bengali text-center text-sm mt-1 lg:text-base lg:mt-2">
+              সবার আগে ৯৯৯ নম্বরে কল করুন জাতীয় জরুরি সেবার জন্য
+            </p>
+          </div>
+        </div>
+        
         {hospitals.map((hospital, index) => (
-          <Card key={index} className="border-l-4 border-l-primary">
-            <CardContent className="p-4">
-              <div className="mb-3">
-                <h3 className="font-bold font-bengali text-lg text-foreground">
+          <Card key={index} className="border-l-4 border-l-primary lg:hover:shadow-lg lg:transition-shadow">
+            <CardContent className="p-4 lg:p-6">
+              <div className="mb-3 lg:mb-4">
+                <h3 className="font-bold font-bengali text-lg text-foreground lg:text-xl">
                   {hospital.name}
                 </h3>
-                <p className="text-sm text-muted-foreground font-bengali">
+                <p className="text-sm text-muted-foreground font-bengali lg:text-base">
                   {hospital.type}
                 </p>
               </div>
 
-              <div className="space-y-2 mb-4">
-                <div className="flex items-center gap-2 text-sm">
-                  <Phone className="h-4 w-4 text-primary" />
+              <div className="space-y-2 mb-4 lg:space-y-3 lg:mb-6">
+                <div className="flex items-center gap-2 text-sm lg:text-base">
+                  <Phone className="h-4 w-4 text-primary lg:h-5 lg:w-5" />
                   <span className="font-bengali">সাধারণ:</span>
                   <span className="font-mono">{hospital.phone}</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <Phone className="h-4 w-4 text-red-500" />
+                <div className="flex items-center gap-2 text-sm lg:text-base">
+                  <Phone className="h-4 w-4 text-red-500 lg:h-5 lg:w-5" />
                   <span className="font-bengali">জরুরি:</span>
                   <span className="font-mono text-red-600 font-semibold">{hospital.emergency}</span>
                 </div>
-                <div className="flex items-start gap-2 text-sm">
-                  <MapPin className="h-4 w-4 text-success mt-0.5" />
+                <div className="flex items-start gap-2 text-sm lg:text-base">
+                  <MapPin className="h-4 w-4 text-success mt-0.5 lg:h-5 lg:w-5" />
                   <span className="font-bengali">{hospital.address}</span>
                 </div>
               </div>
 
-              <div className="flex gap-2">
+              <div className="flex gap-2 lg:gap-3">
                 <Button
                   onClick={() => makeCall(hospital.emergency)}
-                  className="flex-1 btn-ripple bg-red-600 hover:bg-red-700 text-white"
+                  className="flex-1 btn-ripple bg-red-600 hover:bg-red-700 text-white lg:py-2"
                   size="sm"
                 >
-                  <Phone className="h-4 w-4 mr-2" />
-                  জরুরি কল
+                  <Phone className="h-4 w-4 mr-1 lg:h-5 lg:w-5 lg:mr-2" />
+                  <span className="lg:text-base">জরুরি কল</span>
                 </Button>
                 <Button
                   onClick={() => makeCall(hospital.phone)}
                   variant="outline"
-                  className="flex-1 border-primary text-primary hover:bg-primary/10"
+                  className="flex-1 border-primary text-primary hover:bg-primary/10 lg:py-2"
                   size="sm"
                 >
-                  <Phone className="h-4 w-4 mr-2" />
-                  সাধারণ কল
+                  <Phone className="h-4 w-4 mr-1 lg:h-5 lg:w-5 lg:mr-2" />
+                  <span className="lg:text-base">সাধারণ কল</span>
                 </Button>
                 <Button
                   onClick={() => openMap(hospital.coordinates, hospital.name)}
                   variant="outline"
-                  className="border-success text-success hover:bg-success/10"
+                  className="border-success text-success hover:bg-success/10 lg:py-2 lg:px-4"
                   size="sm"
                 >
-                  <MapPin className="h-4 w-4" />
+                  <MapPin className="h-4 w-4 lg:h-5 lg:w-5 lg:mr-2" />
+                  <span className="hidden lg:inline">ম্যাপ</span>
                 </Button>
               </div>
             </CardContent>
           </Card>
         ))}
-
-        <div className="bg-red-50 border border-red-200 rounded-lg p-4 mt-6">
-          <p className="text-red-800 font-bengali text-center font-semibold">
-            ⚠️ জরুরি পরিস্থিতিতে
-          </p>
-          <p className="text-red-700 font-bengali text-center text-sm mt-1">
-            সবার আগে ৯৯৯ নম্বরে কল করুন জাতীয় জরুরি সেবার জন্য
-          </p>
-        </div>
       </div>
     </Layout>
   );

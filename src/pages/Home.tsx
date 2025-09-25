@@ -54,42 +54,43 @@ const Home = () => {
   return (
     <Layout showNavBars={true}>
       {/* Minimalistic Header Section */}
-      <div className="text-center px-4 py-4 bg-gradient-to-br from-red-50 to-red-100">
+      <div className="text-center px-4 py-4 bg-gradient-to-br from-red-50 to-red-100 lg:py-12">
         <img 
           src="/images/bobdo-logo.png"
           alt="BOBDO Logo"
-          className="w-16 h-16 mx-auto mb-2 object-contain"
+          className="w-16 h-16 mx-auto mb-2 object-contain lg:w-24 lg:h-24 lg:mb-4"
         />
-        <h1 className="text-xl font-bold text-primary mb-1 font-bengali">
+        <h1 className="text-xl font-bold text-primary mb-1 font-bengali lg:text-3xl lg:mb-3">
           বগুড়া অনলাইন রক্তদান সংগঠন
         </h1>
-        <p className="text-sm text-muted-foreground font-bengali">
+        <p className="text-sm text-muted-foreground font-bengali lg:text-lg">
           স্বেচ্ছায় করি রক্তদান, হাসবে রোগী বাঁচবে প্রাণ
         </p>
       </div>
 
       {/* Social Media Buttons */}
-      <div className="px-4 py-4">
-        <div className="flex gap-2 justify-center">
+      <div className="px-4 py-4 lg:py-8">
+        <div className="flex gap-2 justify-center lg:gap-4 lg:max-w-md lg:mx-auto">
           {socialButtons.map((button) => (
             <Button
               key={button.name}
               onClick={() => openExternalLink(button.url)}
-              className={`flex-1 ${button.color} text-white border-0 rounded-full py-2.5 shadow-md hover:shadow-lg transition-all duration-200`}
+              className={`flex-1 ${button.color} text-white border-0 rounded-full py-2.5 shadow-md hover:shadow-lg transition-all duration-200 lg:py-3 lg:text-base`}
             >
-              <button.icon className="h-4 w-4" />
+              <button.icon className="h-4 w-4 lg:h-5 lg:w-5 lg:mr-2" />
+              <span className="hidden lg:inline">{button.name.split(' ')[0]}</span>
             </Button>
           ))}
         </div>
       </div>
 
       {/* Services Section */}
-      <div className="px-4 pb-4">
-        <h2 className="text-lg font-bold text-center mb-4 font-bengali text-foreground">
+      <div className="px-4 pb-4 lg:pb-8">
+        <h2 className="text-lg font-bold text-center mb-4 font-bengali text-foreground lg:text-2xl lg:mb-8">
           সেবাসমূহ
         </h2>
         
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-6 lg:max-w-5xl lg:mx-auto">
           {services.map((service) => (
             <ServiceCard
               key={service.path}
